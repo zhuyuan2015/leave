@@ -1,0 +1,79 @@
+<!-- 
+    Describe: 留言
+    Created by ZhuYuan on 2017-03-17 23:31
+-->
+<!DOCTYPE html>
+<html>
+<head lang="zh_CN">
+	<title>留言</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <!--[if lt IE 9]>
+        <script src="ie/html5shiv.min.js"></script>
+        <script src="ie/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+    <!--留言表单-->
+    <form id="leave">
+        <div class="form-group">
+            <label for="name">标题</label>
+            <input type="text" class="form-control" id="name" name="name" required="required" placeholder="请输入标题">
+        </div>
+        <div class="form-group">
+            <label for="content">内容</label>
+            <textarea name="content" id="content"  class="form-control" rows="5" required="required" placeholder="请输入内容"></textarea>
+        </div>
+        <div class="form-group">
+            <button id="submit" type="submit" class="btn btn-default">提交</button>
+        </div>
+    </form>
+    <!-- 留言列表-->
+    <div id="leaveList"></div>
+    <!-- 留言分页-->
+    <ul id="leavePage" class="pagination"></ul>
+    <!-- 留言模版-->
+    <script id="leaveTemplate" type="text/template">
+        <ul id="{{_id}}" class="list-group">
+            <li class="list-group-item">
+                <ul class="media-list">
+                    <li class="meida">
+                        <div class="media-body">
+                            <h4 class="meida-heading">{{name}} <small>{{date}}</small><a href="javascript:void(0)" name="{{_id}}" class="delete glyphicon glyphicon-remove pull-right"></a></h4>
+                            <p>{{content}}</p>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </script>
+
+</div>
+
+<div id="msg">
+    <i class="msg"></i>
+    <span></span>
+</div>
+
+<div id='load'>
+    <div class='spinner'>
+        <div class='rect1'></div>
+        <div class='rect2'></div>
+        <div class='rect3'></div>
+        <div class='rect4'></div>
+        <div class='rect5'></div>
+    </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="js/underscore-no-conflict-min.js"></script>
+<script src="js/jqPaginator.js"></script>
+<script src="js/index.js"></script>
+
+</body>
+</html>
